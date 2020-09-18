@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {
   EventsListComponent,
   EventThumbnailComponent,
@@ -12,6 +12,7 @@ import {
 } 
 from './events/index'
 
+import { AuthService } from './user/auth.service';
 import { appRouters } from './router'
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component'
@@ -21,6 +22,8 @@ import { Error404Component } from './error/404.component'
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRouters),
     NgbModule
   ],
@@ -31,13 +34,15 @@ import { Error404Component } from './error/404.component'
     NavBarComponent,
     EventDtailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+  
     
   ],
   providers: [
     EventsService,
     ToasterService,
     EventRoteActivatorServce,
+    AuthService,
     {provide:'canDeactivateNewEvent', useValue:isDertyPage}
     ],
   bootstrap: [AppComponent]

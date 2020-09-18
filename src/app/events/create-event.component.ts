@@ -1,20 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
-    template: `
-            <h1>Create New Event</h1>
-            <div class="col-md-6">
-            <h3>[Create New Event]</h3>
-            <br>
-            <br>
-            <button class="btn btn-primary" type="submit">Save</button>
-            <button id="btn-clss" class="btn btn-default " type="submit" (click)="cencle()">Cencle</button>
-            </div>
-    `,
+    templateUrl: './create-event.component.html',
     styles: [`
-    #btn-clss {left-margin:50px}
-
-    `]
+    em {float-right; color: red; padding-left:10px}
+    .error input {background-color:#E3C3C5}
+    .error ::-webkit-input-placeholder {background-color:#999;}
+    .error ::-moz-placeholder {color:#999;}
+    .error :-moz-placeholder {color:#999;}
+    .error ::ms-input-placeholder {color:#999;}
+  `]
 })
 export class CreateEventComponent{
     isDirty: boolean = true
@@ -26,4 +21,8 @@ export class CreateEventComponent{
         this.router.navigate(['/event'])
     }
 
+    saveEvent(formValues){
+        console.log(formValues)
+
+    }
 }

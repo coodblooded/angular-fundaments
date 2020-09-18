@@ -33,8 +33,10 @@
     </form> -->
     <ul class="navbar-nav mr-right">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/user/profile']">User Profile</a>
-      </li>
+        <a  *ngIf="!auth.isAuthenticated()" class="nav-link" [routerLink]="['/user/login']">Login</a>
+
+        <a  *ngIf="auth.isAuthenticated()"  class="nav-link" [routerLink]="['/user/profile']">Welcome {{auth.currentuser.firstName}}</a>
+      </li> 
     </ul>    
   </div>
 </nav>
