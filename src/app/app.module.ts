@@ -8,9 +8,11 @@ import {
   CreateEventComponent,
   EventDtailsComponent ,
   EventsService,
-  EventRoteActivatorServce
+  EventRoteActivatorServce,
+  SessionListComponent
 } 
 from './events/index'
+import { CreateSesstionComponent } from './events/event-details/create-session.component'
 
 import { AuthService } from './user/auth.service';
 import { appRouters } from './router'
@@ -18,6 +20,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToasterService } from './common/toastr.service';
+import { CollapseWellComponent } from './common/collapse.component';
 import { Error404Component } from './error/404.component'
 @NgModule({
   imports: [
@@ -35,6 +38,9 @@ import { Error404Component } from './error/404.component'
     EventDtailsComponent,
     CreateEventComponent,
     Error404Component,
+    CreateSesstionComponent,
+    SessionListComponent,
+    CollapseWellComponent
   
     
   ],
