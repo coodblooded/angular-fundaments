@@ -9,7 +9,8 @@ import {
   EventDtailsComponent ,
   EventsService,
   EventRoteActivatorServce,
-  SessionListComponent
+  SessionListComponent,
+  DurationPipe
 } 
 from './events/index'
 import { CreateSesstionComponent } from './events/event-details/create-session.component'
@@ -40,7 +41,8 @@ import { Error404Component } from './error/404.component'
     Error404Component,
     CreateSesstionComponent,
     SessionListComponent,
-    CollapseWellComponent
+    CollapseWellComponent,
+    DurationPipe
   
     
   ],

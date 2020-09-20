@@ -6,8 +6,8 @@ import { Component, Input} from '@angular/core';
     <div class="row">
     <div class="col">
     <div  [routerLink]="['/event', event.id]" class="well hverwell thumnail">
-        <h2>{{event?.name}}</h2>
-        <div>Date:{{event?.date}}</div>
+        <h2>{{event?.name | uppercase}}</h2>
+        <div>Date:{{event?.date | date:"shortDate"}}</div>
         <div  [ngClass]="getClaslCss()" [ngSwitch]="event?.time">
         Time:{{event?.time}}
         <span *ngSwitchCase="'8:00 am'">(Early Start) </span>
@@ -15,7 +15,7 @@ import { Component, Input} from '@angular/core';
         <span *ngSwitchDefault>(Normal Start) </span>
         
         </div>
-        <div>Price: \${{event?.price}}</div>
+        <div>Price: {{event?.price | currency: "USD"}}</div>
         <div *ngIf="event?.location" >
             <span class> Location: {{event?.location?.address}}</span>
             <br>
